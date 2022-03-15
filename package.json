@@ -9,7 +9,7 @@
     "dev": "cross-env NODE_ENV=development remix dev",
     "postinstall": "remix setup node",
     "release": "standard-version",
-    "start": "cross-env NODE_ENV=production remix-serve build"
+    "start": "cross-env NODE_ENV=production PORT=3001 remix-serve build"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
