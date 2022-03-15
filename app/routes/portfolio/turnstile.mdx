@@ -1,0 +1,15 @@
+---
+meta:
+  title: Portfolio / Turnstiles
+---
+
+A couple years ago, I was tasked with integrating our platform with this turnstile hardware for a client in Texas. Visitors bring their paper or mobile ticket to the barcode reader on the turnstile, it sends a request to our application to validate.
+
+The client already ordered the hardware through a vendor just weeks before their opening.
+
+In order to be compatible, I had to write a SOAP interface without having access to the turnstile hardware that would use it. It had to function exactly to spec, otherwise it would fail. I wrote software to simulate a turnstile following the hardware company's documentation.
+
+I reorganized our existing scanning application into a library that was packaged with the new local server application.
+
+Upon completion, I shipped this Surface Pro loaded with the new application to our client in Texas. I included A case, accessories, and some quick-setup documentation.
+When they arrived, the hardware vendor onsite entered some settings on the turnstiles and it .....worked!

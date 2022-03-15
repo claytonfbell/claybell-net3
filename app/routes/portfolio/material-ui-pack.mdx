@@ -1,0 +1,54 @@
+---
+meta:
+  title: Portfolio / material-ui-pack
+---
+
+import { MUIPackDemo } from "../../MUIPackDemo"
+
+[![npm version](https://badge.fury.io/js/material-ui-pack.svg)](https://badge.fury.io/js/material-ui-pack)
+[![Build Status](https://travis-ci.org/claytonfbell/material-ui-pack.svg?branch=master)](https://travis-ci.org/claytonfbell/material-ui-pack)
+
+A while back I created an npm package for myself to keep some shared code between multiple projects and for work and personal side-projects.
+
+Its a fairly opinionated API for handling form state, dark-mode, and some useful React hooks.
+
+## Demo Form
+
+<MUIPackDemo />
+
+```tsx
+import { Box } from "@material-ui/core"
+import { Form } from "material-ui-pack"
+import React, { useState } from "react"
+
+export default function Demo() {
+  const [state, setState] = React.useState({
+    firstName: "",
+    phone: "",
+    state: "OR",
+  })
+  const [error, setError] = useState<string>()
+  function handleSubmit() {
+    setError(`It worked! ${JSON.stringify(state)}`)
+  }
+  return (
+    <Box maxWidth={400}>
+      <Form
+        onSubmit={handleSubmit}
+        state={state}
+        setState={setState}
+        error={error}
+        schema={{
+          firstName: "capitalize",
+          phone: "phone",
+          state: {
+            type: "region",
+            countryIsoType: "isoAlpha2",
+            country: "US",
+          },
+        }}
+      />
+    </Box>
+  )
+}
+```

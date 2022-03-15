@@ -1,0 +1,28 @@
+---
+meta:
+  title: Portfolio / material-ui-bootstrap
+---
+
+import { MUIBootstrapDemo } from "../../MUIBootstrapDemo"
+
+[![npm version](https://badge.fury.io/js/material-ui-bootstrap.svg)](https://badge.fury.io/js/material-ui-bootstrap)
+[![Build Status](https://travis-ci.org/claytonfbell/material-ui-bootstrap.svg?branch=master)](https://travis-ci.org/claytonfbell/material-ui-bootstrap)
+
+I sometimes like the cleaner button styles and variants bootstrap's buttons and alerts. These components are simple to drop in place without losing any features or properties of Material UIs original components.
+
+<MUIBootstrapDemo />
+
+```tsx
+import { Grid } from "@material-ui/core"
+import { Button } from "material-ui-bootstrap"
+import { bootstrapColors } from "material-ui-bootstrap/dist/Alert"
+import React from "react"
+
+export default function Demo() {
+  return (
+    <Button variant="contained" color="success">
+      Green Button
+    </Button>
+  )
+}
+```

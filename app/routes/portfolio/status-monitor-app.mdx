@@ -1,0 +1,16 @@
+---
+meta:
+  title: Portfolio / status-monitor.app
+---
+
+I built a status monitor app to send alert notifications when a
+successful "ping" isn't received within a specified interval of time.
+
+It is useful when you have hundreds of automated reports and processes
+and can't afford to be the last one to know that it has stopped working.
+
+Use your API key to post JSON to the endpoint: `https://status-monitor.app/api/ping`.
+
+```bash
+curl -d '{"name": "Test Ping","groupName": "Test Group","details": "Some test info with **markdown** formatting.","interval": 10,"apiKey": "**APIKEY HERE**","progressBar": 33,"success": true,"emails": ["example@fakeemail.com"]}' -H "Content-Type: application/json" -X POST https://status-monitor.app/api/ping
+```

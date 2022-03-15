@@ -1,0 +1,23 @@
+---
+meta:
+  title: Portfolio / Scan Tickets
+---
+
+I developeed this application for iOS and Windows several years ago for scanning tickets at Interactive Ticketing events.
+
+It has been used by thousands of consumer shows and fairs that receive high traffic of new visitors. It must perform well in conditions where access to internet or wired electrical outlets are difficult.
+
+- It is symantically versioned like `v6.1.12` and follows alpha, beta, and stable cycles with multiple versions in the field at a time.
+- It synchronizes a locally stored SQLite3 database with our platform through a REST API I developed with PHP / Slim framework.
+- Each scanning device is tracked online and can be configured for advanced scanning rules and locations.
+- Updates are automatic through a custom **auto-update** library that I also developed.
+
+It is currently on its 6th major version, I'm considering a version 7 with Electron and/or React Native.
+
+## iOS version
+
+The iOS version is primarily for iPods that are inserted into a barcode scanner accessory that encases the iPod, but some smaller events may use iPhones with the camera to scan tickets.
+
+## Windows version
+
+Users typically plug one or more wired USB barcode readers into a netbook running this software.
