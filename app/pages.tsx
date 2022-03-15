@@ -204,7 +204,16 @@ export const pages: Page[] = [
     title: "This Website",
     menuImage: "claybell-net/tablet-dark.png",
     description: `This blog / portfolio site.`,
-    stack: ["Remix", "React", "mdx", "TypeScript", "Material UI", "Vercel"],
+    stack: [
+      "Remix",
+      "React",
+      "mdx",
+      "TypeScript",
+      "Material UI",
+      "Vercel",
+      "DigitalOcean",
+      "Docker",
+    ],
     gitHub: "https://github.com/claytonfbell/claybell-net2",
   },
   {

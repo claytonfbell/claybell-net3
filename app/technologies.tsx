@@ -4,6 +4,7 @@ import AWSIcon from "./icons/AWSIcon"
 import BootstrapIcon from "./icons/BootstrapIcon"
 import CSharpIcon from "./icons/CSharpIcon"
 import { DigitalOcean } from "./icons/DigitalOcean"
+import { DockerIcon } from "./icons/DockerIcon"
 import ElectronIcon from "./icons/ElectronIcon"
 import GatsbyIcon from "./icons/GatsbyIcon"
 import JavaIcon from "./icons/JavaIcon"
@@ -55,6 +56,7 @@ export type TechnologyName =
   | "Prisma"
   | "DigitalOcean"
   | "NodeJS"
+  | "Docker"
 
 export type TechnologyGroup = "Front-End" | "Backend" | "DevOps"
 
@@ -271,8 +273,15 @@ I attended [Reactathon 2019](https://www.reactjsvideos.com/conference/reactathon
     group: "Backend",
     description: "A terrific framework built upon react-router.",
   },
+  {
+    name: "Docker",
+    icon: <DockerIcon />,
+    url: "https://docker.com",
+    group: "Backend",
+    description:
+      "Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly.",
+  },
 ]
-// docker
 // python
 // webpack
 // Linux
