@@ -1,2 +1,2 @@
 #!/bin/bash
-pm2 start npm --name "claybellnet" --interpreter bash -- start
+pm2 start npm --name "claybellnet" -- start
