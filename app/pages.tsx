@@ -214,7 +214,7 @@ export const pages: Page[] = [
       "DigitalOcean",
       "Docker",
     ],
-    gitHub: "https://github.com/claytonfbell/claybell-net2",
+    gitHub: "https://github.com/claytonfbell/claybell-net3",
   },
   {
     route: "/keyboards",
