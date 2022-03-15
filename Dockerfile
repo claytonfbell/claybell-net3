@@ -54,8 +54,3 @@ COPY --from=build /app/public /app/public
 ADD . .
 
 CMD ["npm", "run", "start"]
-
-
-
-# docker build ./ -t claybellnet
-# docker run -d -p 127.0.0.1:3001:3001/tcp claybellnet

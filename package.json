@@ -8,8 +8,7 @@
     "build": "cross-env NODE_ENV=production remix build",
     "dev": "cross-env NODE_ENV=development remix dev",
     "postinstall": "remix setup node",
-    "release": "standard-version",
-    "start": "cross-env NODE_ENV=production PORT=3001 remix-serve build"
+    "start": "cross-env NODE_ENV=production remix-serve build"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
@@ -38,7 +37,6 @@
     "@types/react-dom": "^17.0.9",
     "@types/react-gravatar": "^2.6.10",
     "@types/react-gtm-module": "^2.0.1",
-    "standard-version": "^9.3.2",
     "eslint": "^8.9.0",
     "typescript": "^4.5.5"
   },

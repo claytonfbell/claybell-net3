@@ -1,7 +1,6 @@
 #!/bin/bash
-
-pm2 stop claybellnet
+docker container stop claybellnet
+docker container rm claybellnet
 git pull
-npm install
-npm run build
-pm2 start claybellnet
+docker build ./ -t claybellnet
+docker run -d -p 127.0.0.1:3001:3000/tcp --name=claybellnet claybellnet 
