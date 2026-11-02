@@ -16,13 +16,14 @@ npm run build && npm start
 
 ## Deployment
 
-Production runs as a Docker container on the **lab server** (`lab` SSH alias →
-`10.7.7.3`). nginx on the webserver (`root@10.7.7.10`) terminates TLS for
-`claybell.net` / `www.claybell.net` and proxies to `http://10.7.7.3:3000`.
+Production runs as a Docker container on the **webserver** (`root@10.7.7.10`),
+which is also where nginx terminates TLS for `claybell.net` /
+`www.claybell.net` and proxies to `http://127.0.0.1:3000`. The container
+publishes its port on loopback only — nginx is the sole entry point.
 
 ```sh
-./deploy.sh          # build for linux/amd64, smoke-test, ship, restart
-./deploy.sh somevm   # same, to a different SSH alias
+./deploy.sh                    # build for linux/amd64, smoke-test, ship, restart
+./deploy.sh root@other.host    # same, to a different host
 ```
 
 `deploy.sh` is run from the workstation (not the server). It:
@@ -31,7 +32,7 @@ Production runs as a Docker container on the **lab server** (`lab` SSH alias →
    Docker Desktop emulates the build),
 2. runs the image locally on `127.0.0.1:3999` and requires `200` from `/`,
    `/keyboards`, `/portfolio`, and `/resume` — a broken build never ships,
-3. `docker save` | `ssh lab 'docker load'`,
+3. `docker save` | `ssh root@10.7.7.10 'docker load'`,
 4. installs `docker-compose.yml` into `/opt/claybell-net3` and restarts the
    container there, then verifies it answers on `:3000`.
 

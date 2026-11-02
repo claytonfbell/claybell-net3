@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-# Deploy claybell-net3 to the lab server.
+# Deploy claybell-net3 to the webserver (10.7.7.10), where nginx also runs.
 #
 # The app is stateless (no database, no volumes), so a deploy is just:
 # build a linux/amd64 image here, ship it over SSH, and replace the container.
-# The image is built locally because the workstation is arm64 and the lab host
+# The image is built locally because the workstation is arm64 and the host
 # is x86_64 — Docker Desktop emulates the amd64 build.
 #
 # Usage:
-#   ./deploy.sh          # deploy to the "lab" SSH alias (10.7.7.3)
-#   ./deploy.sh myvm     # deploy to a different SSH alias
+#   ./deploy.sh                   # deploy to root@10.7.7.10
+#   ./deploy.sh root@other.host   # deploy elsewhere
 set -euo pipefail
 
-REMOTE=${1:-lab}
+REMOTE=${1:-root@10.7.7.10}
 DEST=/opt/claybell-net3
 IMAGE=claybell-net3:latest
 PLATFORM=linux/amd64
@@ -62,4 +62,4 @@ ssh "$REMOTE" 'docker image prune -f' >/dev/null
 echo "==> Verifying container on $REMOTE"
 ssh "$REMOTE" 'curl -fsS -m 10 -o /dev/null http://127.0.0.1:3000/ && echo "    responds on :3000"'
 
-echo "==> Done. nginx on root@10.7.7.10 proxies claybell.net -> http://10.7.7.3:3000"
+echo "==> Done. nginx on this host proxies claybell.net -> http://127.0.0.1:3000"

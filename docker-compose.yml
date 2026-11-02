@@ -6,7 +6,8 @@ services:
     # (docker save | ssh docker load) — never pulled from a registry.
     pull_policy: never
     ports:
-      - "3000:3000"
+      # nginx runs on the same host — no need to expose this to the network.
+      - "127.0.0.1:3000:3000"
     environment:
       NODE_ENV: production
       PORT: "3000"
