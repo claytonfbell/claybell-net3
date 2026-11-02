@@ -1,0 +1,10 @@
+# The image installs its own Linux node_modules and builds its own output —
+# the local copies (macOS binaries, stale 2022 build artifacts) must never
+# land in the image via the trailing `ADD . .` in the Dockerfile.
+.git
+.cache
+node_modules
+build
+public/build
+.DS_Store
+*.log
